@@ -1,0 +1,101 @@
+
+<div class="container clearfix">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-9">
+      <div class="chat">  
+        <div class="chat-header ">
+          <div class="row">
+   
+              <div class="col-md-8 col-sm-8">
+                  <img height="50px;" width="50px;" [src]="photoURL" style="border-radius:50%;" alt="avatar" />
+                  
+                  <div class="chat-about">
+                    <div class="chat-with">{{displayName}}</div>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                  <label >
+                    <img style="float: right;" height = "40%"  width = "40%" src="assets/img/attach.png" />
+                    <input type="file" style=" display: none;"  (change)="selectFiles($event)" multiple>
+                  </label> 
+                  <label >
+                      <img style="float: right;" height = "40%" (click)="gotoProfile()" width = "40%" src="assets/img/profile.png" />
+                  </label> 
+              </div>  
+          </div> 
+
+        </div>
+        <!-- end chat-header -->
+         
+        <div class="chat-history" #content >
+          <ul *ngFor="let item of allMessages;let i=index" style="height:30%;list-style: none;">
+          
+
+            <li class="message-data " [ngStyle]="{'float':item.sentBy !== uid ?'right':'left'}" >
+                <span class="message-data-time" >{{item.time}}</span> &nbsp; &nbsp;
+            </li>
+            <li class="clearfix">
+             
+              <div [ngClass]="{' message my': (item.sentBy !== uid), ' message from': (item.sentBy === uid) }">
+                <p *ngIf="imageOrNot[i]=== undefined" style=" width: auto;  
+                word-break: break-all;">
+                 {{item.message}}
+                  
+                </p>
+                <span *ngIf="item.sentBy !== uid && item.read===true">read</span>
+                <span *ngIf='imageOrNot[i]==="png" || imageOrNot[i] ==="jpg" || imageOrNot[i]=="jpeg"' style="float: right;">
+                 <a href="{{item.message}}" target="_blank"> 
+                   <img height="100px;" width="100px;" [src]="item.message">
+                </a>
+                 
+                </span><br>
+
+                <span *ngIf='imageOrNot[i]==="pdf" || imageOrNot[i] ==="xlsx" || imageOrNot[i]==="xls" || imageOrNot[i]==="xlsm"'>
+                    <a href="{{item.message}}" target="_blank"> 
+                  <img src="assets/img/excel.png" height="20px;" width="20px;" *ngIf='imageOrNot[i]!=="pdf"'>
+                  <img *ngIf='imageOrNot[i]==="pdf"' src="assets/img/pdf.png" height="20px;" width="20px;">&nbsp;&nbsp; {{item.fileName}}&nbsp;&nbsp;
+                    </a>
+                </span>
+              </div>
+            </li>    
+          </ul>
+
+        </div>
+        <!-- end chat-history -->
+
+        <div class="chat-message clearfix">
+
+          <form [formGroup]="userForm" (submit)="sendMessage()" name="msgg">
+            
+            <div class="row" style="margin-top:30px;padding-right:10%;" no-padding>
+              <div class="col-md-1">
+              </div>
+              <div class="col-md-9">
+                <div class="form-group">
+                  <textarea style="text-decoration: none;" id ='name' formControlName="message" class="form-control" rows="3" id="comment"></textarea>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button [disabled]="!userForm.valid" type="submit">
+                  <img height="70px;" width="70px;" style="  border-radius:50%;" src="assets/img/send.png">
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- end chat-message -->
+
+      </div>
+      <!-- end chat -->
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+
+
+</div>
+
+<!-- end container -->
+

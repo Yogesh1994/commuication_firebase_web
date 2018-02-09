@@ -1,0 +1,44 @@
+<body>
+  <div class="container" style="width:60%;" >
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save()" >
+    <div formArrayName="Particulars">
+    
+     <div  *ngFor="let detail of myForm.controls.Particulars.controls; let i=index" class="panel panel-default">
+    
+      <p class="form-control">{{ i+1 }} User Details
+          <img class=" pull-right" src="../assets/img/minus.png" style="margin-right:5px;float:right" *ngIf="myForm.controls.Particulars.controls.length > 1" (click)="removeUser(i)">
+              <!-- <ion-icon ios="ios-close-circle" md="md-close-circle"></ion-icon> -->
+              
+      </p>
+    
+    <div [formGroupName]="i">
+      
+      <input type="text" placeholder="Name" class="form-control" id="name" formControlName="name"><br>
+      <input type="email" placeholder="email" class="form-control" id="email" formControlName="email"><br>
+      <input type="number" placeholder="Contact number" class="form-control" id="contactNo" formControlName="contactNo"><br>
+      <input type="password" placeholder="Password" class="form-control" id="pw" formControlName="pw"><br>
+      <input type="password" placeholder="Confirm Password" class="form-control" id="cpw" formControlName="cpw"><br>
+      <select class="form-control" formControlName="userType">
+        <option value="">User Type</option>
+        <option value="sales">sales</option>
+        <option value="client">client</option>        
+      </select>
+    </div>
+    </div>
+    </div>
+    <img (click)="addUser()" src="../assets/img/plus.png" style="width:7%;height:7%; float:right; padding-bottom:10px;" >
+    <button class="btn btn-primary form-control" padding [disabled]="!myForm.valid" [disabled]="!myForm.valid">Add Users</button>
+
+    <div *ngIf="loading">
+        <img  src='https://thumbs.gfycat.com/PlayfulValidAzurevase-max-1mb.gif' height="35px;" width="35px;">&nbsp;&nbsp;&nbsp;Adding New User...
+        
+    </div> 
+    <div class="alert success" *ngIf="userAdded">
+      <strong>Success!</strong> User Added Successfully.
+      
+     </div> 
+
+  </form>
+  </div>
+
+</body>

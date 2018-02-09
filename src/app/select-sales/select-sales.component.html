@@ -1,0 +1,40 @@
+<!-- <ion-header>
+  <ion-navbar color="navbar" class="white-text">
+    <ion-title no-padding >
+      <ion-item style="background: transparent !important" no-lines no-padding>
+        <ion-avatar item-left>
+          <img [src]="photoURL">
+        </ion-avatar>
+        <span style="color:aliceblue">Select Sales Person</span>
+      </ion-item>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content no-padding>
+<ion-searchbar (ionInput)="getItems($event)" mode='ios'></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let person of salesPersons" (click)="gotoClient(person)">
+   <b> {{ person.displayName }} </b>
+  </ion-item>
+</ion-list>
+</ion-content> -->
+<body>
+    <div class="container"  style = "padding-top:20px;">
+        <div class="row" style="background-color: darkgreen; color:#fff;padding-top:5px;padding-bottom:5px;" >
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><p >Sales Person</p></div>
+          <div class="col-md-4">
+              <a (click)="logout()"><img src="../assets/img/app_logout.png" style="width:10%;height:10%; float:right" ></a>
+          </div>      
+        </div>
+       
+ <p class="list-group" *ngFor="let person of salesPersons" (click)="gotoClient(person)">
+
+  
+    <span class="list-group-item">{{ person.displayName }}</span>
+  
+  </p>
+  </div>
+</body>

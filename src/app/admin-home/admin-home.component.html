@@ -1,0 +1,66 @@
+<!-- <ion-header>
+  <ion-navbar color="navbar" no-padding class="white-text">
+    <ion-title no-padding  text-justify>
+      <ion-item style="background: transparent !important" no-lines  >
+        <ion-avatar item-left>
+          <img [src]="photoURL" >
+        </ion-avatar>
+        <p style="color:aliceblue" text-justify>Welcome Admin</p>
+      </ion-item>
+    </ion-title>
+    <ion-buttons right >
+      <button ion-button icon-only (click)="logout()">
+          <ion-icon ios="ios-log-out" md="md-log-out" (click)="logout()"></ion-icon>
+      </button>
+    </ion-buttons>
+  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<button ion-button (click)="gotoNext()"> sales Persons </button>
+<button ion-button (click)="addUser()"> Add user </button>
+</ion-content> -->
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+</head>
+
+<body>
+  <div class="container" padding style = "padding-top:20px;">
+    <div class="row" style="background-color: darkgreen; color:#fff;padding-top:5px;padding-bottom:5px;" >
+      <div class="col-md-4"></div>
+      <div class="col-md-4"><p style="margin:none;">ADMIN PAGE</p></div>
+      <div class="col-md-4">
+          <!-- <a (click)="logout()"><img src="../assets/img/app_logout.png" style="width:10%;height:10%; float:right" ></a> -->
+          <a href="#" data-toggle="modal" data-target="#logoutModal"><img src="../assets/img/app_logout.png" style="width:10%;height:10%; float:right" ></a>
+      </div>      
+    </div>
+    <div class="col-md-12 " style="padding-top: 20px">
+       <ul  class="nav nav-pills nav-justified">
+           <li  class="active" ><a (click)="gotoNext()">Sales Persons</a></li>
+           <li><a (click)="addUser()">Add user</a></li>
+         </ul>
+        
+    </div>  
+ </div>
+</body>
+<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4>Log Out <i class="fa fa-lock"></i></h4>
+        </div>
+        <div class="modal-body">
+          <p><i class="fa fa-question-circle"></i> Are you sure you want to log-off? <br /></p>
+          <div class="actionsBtns">
+                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <a (click)="logout()"><input type="submit" class="btn btn-default btn-primary" data-dismiss="modal" value="Logout" /></a>
+                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

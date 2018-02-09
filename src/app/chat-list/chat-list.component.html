@@ -1,0 +1,42 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+</head>
+
+<body>
+<div class="container" padding style = "padding-top:20px;">
+   <div class="col-md-12 col-md-offset-3" style="padding-left:50px;">
+      <ul  class="nav nav-pills nav-justified">
+          <li  class="active" ><a>Chat</a></li>
+          <li><a (click)="goto()">Profile</a></li>
+        </ul>
+       
+    <div id="chatbox" >
+
+        <div id="friendslist" >    
+           <div  *ngIf="loading">
+          <img  src='https://thumbs.gfycat.com/PlayfulValidAzurevase-max-1mb.gif' height="35px;" width="35px;">&nbsp;&nbsp;&nbsp;Loading clients...
+      </div>  
+        <div  *ngIf="!loading">
+                <div class="friend" *ngFor="let client of clientList; let i=index" (click)="gotoChatDetails(client)">
+                    <!-- <div style="height:60px;width: 60px;float:left/;"> -->
+                     
+                      <img height="60px" width="60px" style="padding:4px" [src]='client.photoURL' />
+                    <!-- </div>   -->
+                      <p>
+                        <strong>{{client.displayName}}</strong>
+                        <span>{{client.email}}</span>
+                      </p>
+                      <span *ngIf="unreadArray[i]!=0"  class="circle">{{unreadArray[i]}}</span>
+        
+                  </div>  
+        </div>      
+                  <!-- <div id="search">
+                    <input type="text" id="searchfield" value="Search contacts..." />
+                  </div> -->
+                  
+              </div>                       
+      </div>	
+   </div>  
+</div>  
+</body>

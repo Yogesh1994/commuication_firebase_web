@@ -1,0 +1,50 @@
+[debug] [2018-01-05T04:44:54.248Z] ----------------------------------------------------------------------
+[debug] [2018-01-05T04:44:54.251Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2018-01-05T04:44:54.252Z] CLI Version:   3.16.0
+[debug] [2018-01-05T04:44:54.252Z] Platform:      darwin
+[debug] [2018-01-05T04:44:54.252Z] Node Version:  v6.11.2
+[debug] [2018-01-05T04:44:54.252Z] Time:          Fri Jan 05 2018 10:14:54 GMT+0530 (IST)
+[debug] [2018-01-05T04:44:54.253Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-05T04:44:54.267Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-01-05T04:44:54.267Z] > authorizing via signed-in user
+[info] 
+     🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥     🔥🔥🔥     🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
+     🔥🔥        🔥🔥  🔥🔥     🔥🔥 🔥🔥       🔥🔥     🔥🔥  🔥🔥   🔥🔥  🔥🔥       🔥🔥
+     🔥🔥🔥🔥🔥🔥    🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥   🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥
+     🔥🔥        🔥🔥  🔥🔥    🔥🔥  🔥🔥       🔥🔥     🔥🔥 🔥🔥     🔥🔥       🔥🔥 🔥🔥
+     🔥🔥       🔥🔥🔥🔥 🔥🔥     🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥 🔥🔥🔥🔥🔥🔥🔥🔥  🔥🔥     🔥🔥  🔥🔥🔥🔥🔥🔥  🔥🔥🔥🔥🔥🔥🔥🔥
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/jigneshmistry/Desktop/LiveProjects/Communication_firebase_Web
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[warn] ⚠  You have have not selected any features. Continuing will simply associate this folder with a Firebase project. Press Ctrl + C if you want to start over.
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2018-01-05T04:44:57.170Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-05T04:44:57.170Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/9M1nrogEq73y45SYgZefv1OX4IzTRL_FUBVf6pf-wx0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Jan 05 2018 10:14:57 GMT+0530 (IST)
+[debug] [2018-01-05T04:44:57.408Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-05T04:44:57.480Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Fri Jan 05 2018 10:14:57 GMT+0530 (IST)
+[debug] [2018-01-05T04:45:28.740Z] Error: getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
+    at errnoException (dns.js:28:10)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+[error] 
+[error] Error: Server Error. getaddrinfo ENOTFOUND admin.firebase.com admin.firebase.com:443
